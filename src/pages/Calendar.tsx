@@ -248,7 +248,6 @@ const Calendar = () => {
   const [dialogMode, setDialogMode] = useState<'create' | 'edit'>('create');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const { isAdmin, isAuthenticated } = useAuth();
-  const isStudentView = !isAdmin;
 
   const monthStart = startOfMonth(currentDate);
   const monthEnd = endOfMonth(currentDate);

@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Typography, Box, Paper, Grid, Button, useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import { useAuth } from '../contexts/AuthContext';
 import { styled, keyframes } from '@mui/material/styles';
 import BackgroundGridComponent from '../components/BackgroundGrid';
 
