@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Paper, Grid, Button, useTheme } from '@mui/material';
+import { Container, Typography, Box, Paper, Grid, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { styled, keyframes } from '@mui/material/styles';
@@ -18,7 +18,7 @@ const fadeInUp = keyframes`
 `;
 
 // Styled components
-const StyledPaper = styled(Paper)(({ theme }) => ({
+const StyledPaper = styled(Paper)(() => ({
   background: 'rgba(10, 25, 41, 0.95)',
   backdropFilter: 'blur(10px)',
   borderRadius: '16px',
@@ -67,7 +67,7 @@ const StyledButton = styled(Button)(() => ({
   },
 }));
 
-const AnimatedTitle = styled(Typography)(({ theme }) => ({
+const AnimatedTitle = styled(Typography)(() => ({
   opacity: 0,
   fontFamily: '"Poppins", sans-serif',
   background: 'linear-gradient(to right, #ff6b6b, #4ecdc4, #45b7d1, #96c93d)',
@@ -81,13 +81,13 @@ const AnimatedTitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const AnimatedSubtitle = styled(Typography)(({ theme }) => ({
+const AnimatedSubtitle = styled(Typography)(() => ({
   animation: `${fadeInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards`,
   opacity: 0,
   fontFamily: '"Poppins", sans-serif',
 }));
 
-const AnimatedDescription = styled(Typography)(({ theme }) => ({
+const AnimatedDescription = styled(Typography)(() => ({
   animation: `${fadeInUp} 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards`,
   opacity: 0,
   fontFamily: '"Inter", sans-serif',
@@ -95,18 +95,12 @@ const AnimatedDescription = styled(Typography)(({ theme }) => ({
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const theme = useTheme();
 
   return (
     <>
       <BackgroundGridComponent />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        <Box sx={{
-          mt: 4,
-          mb: 4,
-          textAlign: 'center',
-          position: 'relative',
-        }}>
+        <Box sx={{ mt: 4, mb: 4, textAlign: 'center', position: 'relative' }}>
           <AnimatedTitle
             variant="h1"
             gutterBottom
@@ -191,4 +185,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Home;

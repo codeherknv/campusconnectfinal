@@ -11,8 +11,7 @@ import {
   Tabs,
   Alert,
   IconButton,
-  InputAdornment,
-  SelectChangeEvent
+  InputAdornment
 
 } from '@mui/material';
 import { useAuth } from '../contexts/AuthContext';
@@ -182,10 +181,7 @@ const Auth = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (e: SelectChangeEvent<'student'>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+
 
   const validatePassword = (password: string) => {
     const minLength = 8;
