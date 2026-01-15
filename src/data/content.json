@@ -1,0 +1,65 @@
+{
+  "navigation": {
+    "logo": "CampusConnect",
+    "menuItems": [
+      {
+        "label": "Home",
+        "path": "/",
+        "icon": "HomeIcon"
+      },
+      {
+        "label": "Events",
+        "path": "/calendar",
+        "icon": "CalendarMonthIcon"
+      }
+    ]
+  },
+  "home": {
+    "title": "Welcome to CampusConnect",
+    "subtitle": "BMSCE",
+    "description": "Your one-stop solution for managing institutional events and campus schedules.",
+    "cards": [
+      {
+        "title": "Event Calendar",
+        "description": "Stay updated with all campus events, academic schedules, and important dates.",
+        "icon": "CalendarMonthIcon",
+        "path": "/calendar",
+        "buttonText": "View Calendar"
+      },
+      {
+        "title": "Quick Actions",
+        "description": "Quick access to common tasks and features.",
+        "icon": "EventNoteIcon",
+        "actions": [
+          {
+            "label": "Add New Event",
+            "path": "/calendar",
+            "icon": "CalendarMonthIcon",
+            "adminOnly": true
+          },
+          {
+            "label": "View Calendar",
+            "path": "/calendar",
+            "icon": "CalendarMonthIcon"
+          }
+        ]
+      }
+    ]
+  },
+  "events": {
+    "types": [
+      "Academic",
+      "Cultural",
+      "Sports",
+      "Technical",
+      "Workshop",
+      "Conference"
+    ],
+    "status": [
+      "Upcoming",
+      "Ongoing",
+      "Completed",
+      "Cancelled"
+    ]
+  }
+}
