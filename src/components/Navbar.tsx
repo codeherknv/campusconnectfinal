@@ -41,14 +41,6 @@ const MobileMenuButton = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-const NavButtonsContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  gap: theme.spacing(1),
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
-  },
-}));
-
 interface StyledButtonProps {
   active?: boolean;
 }
@@ -97,19 +89,13 @@ const Logo = styled(Typography)(({ theme }) => ({
   backgroundSize: '200% auto',
   animation: 'gradient 3s linear infinite',
   '@keyframes gradient': {
-    '0%': {
-      backgroundPosition: '0% center',
-    },
-    '100%': {
-      backgroundPosition: '200% center',
-    },
+    '0%': { backgroundPosition: '0% center' },
+    '100%': { backgroundPosition: '200% center' },
   },
   letterSpacing: '-0.5px',
   cursor: 'pointer',
   transition: 'opacity 0.3s ease-in-out',
-  '&:hover': {
-    opacity: 0.9,
-  },
+  '&:hover': { opacity: 0.9 },
 })) as typeof Typography;
 
 const Navbar: React.FC = () => {
@@ -145,14 +131,14 @@ const Navbar: React.FC = () => {
           CampusConnect
         </Logo>
 
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 2,
-          [theme.breakpoints.down('md')]: {
-            display: 'none'
-          }
-        }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 2,
+            [theme.breakpoints.down('md')]: { display: 'none' },
+          }}
+        >
           <Box sx={{ display: 'flex', gap: 1 }}>
             <StyledButton
               component={RouterLink}
@@ -186,10 +172,7 @@ const Navbar: React.FC = () => {
               sx={{
                 color: 'rgba(255, 255, 255, 0.7)',
                 transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  color: '#fff',
-                  transform: 'rotate(180deg)',
-                },
+                '&:hover': { color: '#fff', transform: 'rotate(180deg)' },
               }}
             >
               <LogoutIcon />
@@ -210,9 +193,7 @@ const Navbar: React.FC = () => {
           color="inherit"
           aria-label="menu"
           onClick={handleMobileMenuOpen}
-          sx={{
-            display: { xs: 'flex', md: 'none' }
-          }}
+          sx={{ display: { xs: 'flex', md: 'none' } }}
         >
           <MenuIcon />
         </MobileMenuButton>
@@ -231,52 +212,38 @@ const Navbar: React.FC = () => {
             },
           }}
         >
-          <MenuItem
-            component={RouterLink}
-            to="/"
-            onClick={handleMobileMenuClose}
-          >
+          <MenuItem component={RouterLink} to="/" onClick={handleMobileMenuClose}>
             <ListItemIcon>
               <HomeIcon sx={{ color: 'white' }} />
             </ListItemIcon>
             <ListItemText>Home</ListItemText>
           </MenuItem>
-          <MenuItem
-            component={RouterLink}
-            to="/calendar"
-            onClick={handleMobileMenuClose}
-          >
+          <MenuItem component={RouterLink} to="/calendar" onClick={handleMobileMenuClose}>
             <ListItemIcon>
               <CalendarMonthIcon sx={{ color: 'white' }} />
             </ListItemIcon>
             <ListItemText>Events</ListItemText>
           </MenuItem>
-          <MenuItem
-            component={RouterLink}
-            to="/about"
-            onClick={handleMobileMenuClose}
-          >
+          <MenuItem component={RouterLink} to="/about" onClick={handleMobileMenuClose}>
             <ListItemIcon>
               <InfoIcon sx={{ color: 'white' }} />
             </ListItemIcon>
             <ListItemText>About</ListItemText>
           </MenuItem>
           {isAuthenticated ? (
-            <MenuItem onClick={() => {
-              handleMobileMenuClose();
-              handleLogout();
-            }}>
+            <MenuItem
+              onClick={() => {
+                handleMobileMenuClose();
+                handleLogout();
+              }}
+            >
               <ListItemIcon>
                 <LogoutIcon sx={{ color: 'white' }} />
               </ListItemIcon>
               <ListItemText>Logout</ListItemText>
             </MenuItem>
           ) : (
-            <MenuItem
-              component={RouterLink}
-              to="/auth"
-              onClick={handleMobileMenuClose}
-            >
+            <MenuItem component={RouterLink} to="/auth" onClick={handleMobileMenuClose}>
               <ListItemText>Login</ListItemText>
             </MenuItem>
           )}
@@ -286,4 +253,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
